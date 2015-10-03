@@ -1,1 +1,22 @@
 <h3>Welcome</h3>
+
+<% if current_user %>
+	<div class="row" ng-controller="TestCtrl">
+		<div class="col-md-6 col-md-offset-3">
+			<table class="table">
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+					<th>Phone Number</th>
+				</tr>
+				<tr>
+					<td>{{ posts.first_name }}</td>
+					<td>{{ posts.last_name }}</td>
+					<td>{{ posts.email }}</td>
+					<td>{{ posts.phone_number }}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+<% end %>

@@ -1,0 +1,282 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"rouse",
+				"resources"
+			],
+			[
+				"resou",
+				"resource"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/menon/workspace/skill_up/angular_rails_project"
+	],
+	"file_history":
+	[
+		"/home/menon/workspace/simple_rails_angularjs_project/simple_rails_angular.sublime-project",
+		"/home/menon/workspace/simple_rails_angularjs_project/app/assets/javascripts/application.js",
+		"/home/menon/workspace/simple_rails_angularjs_project/Gemfile",
+		"/home/menon/workspace/simple_rails_angularjs_project/app/controllers/application_controller.rb",
+		"/home/menon/workspace/simple_rails_angularjs_project/app/views/visitors/index.html.erb",
+		"/home/menon/workspace/simple_rails_angularjs_project/db/migrate/20150928214253_add_phonenumber_to_users.rb",
+		"/home/menon/workspace/simple_rails_angularjs_project/db/migrate/20150928214237_add_first_and_last_name_to_users.rb",
+		"/home/menon/workspace/simple_rails_angularjs_project/.env",
+		"/home/menon/workspace/simple_rails_angularjs_project/app/assets/stylesheets/framework_and_overrides.css.scss",
+		"/home/menon/workspace/simple_rails_angularjs_project/app/assets/javascripts/angular/main.js",
+		"/home/menon/workspace/simple_rails_angularjs_project/app/assets/javascripts/angular/factory.js",
+		"/home/menon/workspace/simple_rails_angularjs_project/app/views/layouts/application.html.slim",
+		"/home/menon/workspace/simple_rails_angularjs_project/config/routes.rb",
+		"/home/menon/workspace/simple_rails_angularjs_project/app/controllers/visitors_controller.rb",
+		"/home/menon/workspace/simpe_rails_angularjs_project/config/routes.rb",
+		"/home/menon/workspace/simpe_rails_angularjs_project/app/assets/javascripts/angular/main.js",
+		"/home/menon/workspace/simpe_rails_angularjs_project/app/views/layouts/application.html.slim",
+		"/home/menon/workspace/simpe_rails_angularjs_project/app/views/visitors/index.html.slim",
+		"/home/menon/workspace/simpe_rails_angularjs_project/app/controllers/application_controller.rb",
+		"/home/menon/workspace/simpe_rails_angularjs_project/app/assets/javascripts/application.js",
+		"/home/menon/workspace/simpe_rails_angularjs_project/Gemfile",
+		"/home/menon/workspace/simpe_rails_angularjs_project/app/assets/javascripts/main.js",
+		"/home/menon/workspace/simpe_rails_angularjs_project/vendor/assets/javascripts/angular-devise/devise.js",
+		"/home/menon/workspace/simple_rails_angularjs_project/app/views/user_sessions/new.html",
+		"/home/menon/workspace/simple_rails_angularjs_project/app/index.html",
+		"/home/menon/workspace/simple_rails_angularjs_project/app/scripts/controllers/user_sessions.js",
+		"/home/menon/workspace/simple_rails_angularjs_project/app/scripts/app.js",
+		"/home/menon/workspace/simple_rails_project/config/secrets.yml",
+		"/home/menon/workspace/simple_rails_project/config/environments/development.rb",
+		"/home/menon/workspace/simple_rails_project/db/migrate/20150921161504_devise_create_users.rb",
+		"/home/menon/workspace/simple_rails_project/config/environments/production.rb",
+		"/home/menon/workspace/simple_rails_project/.env",
+		"/home/menon/workspace/simple_rails_project/.gitignore",
+		"/home/menon/workspace/rails-devise/config/secrets.yml",
+		"/home/menon/workspace/simple_rails_project/Gemfile",
+		"/home/menon/workspace/simple_rails_project/.ruby-version",
+		"/home/menon/workspace/simple_rails_project/config/application.rb",
+		"/home/menon/workspace/simple_rails_project/config/initializers/devise.rb",
+		"/home/menon/workspace/simple_rails_project/app/controllers/application_controller.rb",
+		"/home/menon/workspace/simple_rails_project/app/views/visitors/index.html.erb",
+		"/home/menon/workspace/simple_rails_project/app/views/layouts/_messages.html.erb",
+		"/home/menon/workspace/simple_rails_project/app/controllers/visitors_controller.rb",
+		"/home/menon/workspace/simple_rails_project/app/views/devise/passwords/edit.html.erb",
+		"/home/menon/workspace/simple_rails_project/app/views/devise/registrations/new.html.erb",
+		"/home/menon/workspace/simple_rails_project/app/views/users/show.html.erb",
+		"/home/menon/workspace/simple_rails_project/app/views/devise/registrations/edit.html.erb",
+		"/home/menon/workspace/simple_rails_project/app/views/layouts/_navigation_links.html.erb",
+		"/home/menon/workspace/simple_rails_project/app/views/devise/sessions/new.html.erb",
+		"/home/menon/workspace/simple_rails_project/app/views/users/index.html.erb",
+		"/home/menon/workspace/simple_rails_project/db/schema.rb",
+		"/home/menon/workspace/simple_rails_project/db/migrate/20150921165636_add_first_and_last_name_to_users.rb",
+		"/home/menon/workspace/simple_rails_project/db/migrate/20150921172625_add_phonenum_to_users.rb",
+		"/home/menon/workspace/simple_rails_project/db/migrate/20150921171651_add_phonenum_to_users.rb",
+		"/home/menon/workspace/simple_rails_project/app/views/layouts/_navigation.html.erb",
+		"/home/menon/workspace/simple_rails_project/db/migrate/20150921161506_add_name_to_users.rb",
+		"/home/menon/workspace/rails-devise/.env",
+		"/home/menon/workspace/rails-devise/app/mailers/application_mailer.rb",
+		"/home/menon/workspace/rails-devise/config/environments/development.rb",
+		"/home/menon/workspace/blog/app/views/welcome/index.html.erb",
+		"/home/menon/workspace/blog/config/routes.rb",
+		"/home/menon/workspace/rails3-bootstrap-devise-cancan/config/initializers/devise.rb",
+		"/home/menon/workspace/rails-devise/config/environments/production.rb",
+		"/home/menon/workspace/rails-devise/config/initializers/devise.rb",
+		"/home/menon/workspace/rails3-bootstrap-devise-cancan/.env",
+		"/home/menon/workspace/rails-devise/Gemfile",
+		"/home/menon/workspace/rails-devise/.env.example",
+		"/home/menon/workspace/rails-devise/db/seeds.rb",
+		"/home/menon/workspace/rails-devise/app/services/create_admin_service.rb",
+		"/home/menon/workspace/rails-devise/.ruby-version",
+		"/home/menon/workspace/sample_app/app/views/static_pages/home.html.erb",
+		"/home/menon/workspace/sample_app/app/views/static_pages/help.html.erb",
+		"/home/menon/workspace/sample_app/spec/spec_helper.rb",
+		"/home/menon/workspace/sample_app/config/routes.rb",
+		"/home/menon/workspace/sample_app/app/controllers/static_pages_controller.rb",
+		"/home/menon/workspace/sample_app/app/views/static_pages/about.html.erb",
+		"/home/menon/workspace/sample_app/spec/requests/static_pages_spec.rb",
+		"/home/menon/workspace/sample_app/.ruby-version",
+		"/home/menon/workspace/sample_app/.ruby-gemset",
+		"/home/menon/workspace/sample_app/Gemfile",
+		"/home/menon/workspace/sample_app/gemfile",
+		"/home/menon/workspace/blog/bin/rails",
+		"/home/menon/workspace/blog/Gemfile",
+		"/home/menon/workspace/blog/Gemfile.lock",
+		"/home/menon/workspace/blog/.ruby-gemset",
+		"/home/menon/workspace/blog/config/database.yml",
+		"/home/menon/workspace/blog/.ruby-version"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 105.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"env",
+			"smtp_settings",
+			":produc",
+			"pg"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "angular_rails.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"route",
+				"config/routes.rb"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"d",
+				"config/database.yml"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/workspace/simple_rails_project/simple_rails.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 374.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
