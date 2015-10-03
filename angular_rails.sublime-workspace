@@ -46,12 +46,22 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/home/menon/workspace/skill_up/angular_rails_project"
-	],
 	"file_history":
 	[
+		"/home/menon/workspace/skill_up/angular_rails_project/app/assets/javascripts/angular/factory.js",
+		"/home/menon/workspace/skill_up/angular_rails_project/app/assets/javascripts/angular/main.js",
+		"/home/menon/workspace/skill_up/angular_rails_project/app/assets/javascripts/application.js",
+		"/home/menon/workspace/skill_up/angular_rails_project/config/routes.rb",
+		"/home/menon/workspace/skill_up/angular_rails_project/app/controllers/visitors_controller.rb",
+		"/home/menon/workspace/skill_up/angular_rails_project/app/views/visitors/index.html.erb",
+		"/home/menon/workspace/skill_up/angular_rails_project/app/views/layouts/application.html.erb",
+		"/home/menon/workspace/skill_up/angular_rails_project/Gemfile",
+		"/home/menon/workspace/skill_up/angular_rails_project/app/views/devise/registrations/new.html.erb",
+		"/home/menon/workspace/skill_up/angular_rails_project/app/views/devise/registrations/edit.html.erb",
+		"/home/menon/workspace/skill_up/angular_rails_project/.env",
+		"/home/menon/workspace/skill_up/angular_rails_project/app/controllers/application_controller.rb",
+		"/home/menon/workspace/skill_up/angular_rails_project/db/migrate/20151003175223_add_fields_to_users.rb",
+		"/home/menon/workspace/skill_up/angular_rails_project/app/views/layouts/_navigation.html.erb",
 		"/home/menon/workspace/simple_rails_angularjs_project/simple_rails_angular.sublime-project",
 		"/home/menon/workspace/simple_rails_angularjs_project/app/assets/javascripts/application.js",
 		"/home/menon/workspace/simple_rails_angularjs_project/Gemfile",
@@ -252,7 +262,7 @@
 		[
 			[
 				"",
-				"~/workspace/simple_rails_project/simple_rails.sublime-project"
+				"~/workspace/simple_rails_angularjs_project/simple_rails_angular.sublime-workspace"
 			]
 		],
 		"width": 380.0

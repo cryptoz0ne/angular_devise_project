@@ -16,3 +16,4 @@
 //= require bootstrap-sprockets
 //= require angular
 //= require angular/main
+//= require angular/factory

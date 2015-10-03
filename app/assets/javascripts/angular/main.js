@@ -1,12 +1,9 @@
 var app = angular.module("MyApp", []);
 
-app.controller("TestCtrl", function($scope, $http) {
+app.controller("TestCtrl",['$scope','myFactory', function($scope, myFactory) {
 	$scope.posts = { };
-  $http.get('get-current-user').success(function(data, status, headers, config) {
-      $scope.posts = data;
-      console.log(data);
-    }).
-    error(function(data, status, headers, config) {
-      // log error
-    });
-});
+	myFactory.get_user().success(function(data){
+		console.log(data);
+		$scope.posts=data;
+	});
+}]);
