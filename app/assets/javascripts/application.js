@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require angular
+//= require angular-devise/devise
 //= require angular/main
 //= require angular/factory
