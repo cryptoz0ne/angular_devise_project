@@ -16,4 +16,3 @@
 //= require angular
 //= require angular-devise/devise
 //= require angular/main
-//= require angular/factory
