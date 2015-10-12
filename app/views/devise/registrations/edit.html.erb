@@ -1,43 +1,49 @@
-<div class="authform">
+<div class="authform" ng-controller="ProfileCtrl">
   <h3>Edit <%= resource_name.to_s.humanize %></h3>
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
-    <%= devise_error_messages! %>
+  <div class="row">
+    <div class="col-md-12" ng-show="errormessage" id="editerr">
+      <p style="color:red; font-size:20px; text-align:center;"></p>
+    </div>
+  </div>
+  <form id="profile-form">
     <div class="row">
       <div class="form-group col-md-5">
         <span style="font-weight:bold;">* First Name </span>
-        <%= f.text_field :first_name, :required => true, :autofocus => true, class: 'form-control' %>
+        <input id="first_name" name="first_name" type="text" class="form-control" ng-model="user.first_name" style="width:100%" required/>
       </div>
       <div class="form-group col-md-7">
         <span style="font-weight:bold;">* Last Name </span>
-        <%= f.text_field :last_name, :required => true, class: 'form-control' %>
+        <input id="last_name" name="last_name" type="text" class="form-control" ng-model="user.last_name" style="width:100%" required/>
       </div>
     </div>
     <div class="form-group">
       <span style="font-weight:bold;">* Email </span>
-      <%= f.email_field :email, class: 'form-control' %>
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
+      <input id="email" name="email" type="email" class="form-control" ng-model="user.email" style="width:100%" required/>
+    </div>
+    <div class="form-group">
+      <span style="font-weight:bold;"> Phone number </span>
+      <input id="phone_number" type="text" class="form-control" ng-model="user.phone_number" style="width:100%" />
     </div>
     <fieldset>
       <legend style="margin-bottom:0px;">Current Password</legend>
       <p>You must enter your current password to make changes.</p>
       <div class="form-group">
-        <%= f.label :current_password %>
-        <%= f.password_field :current_password, class: 'form-control' %>
+        <span style="font-weight:bold;"> Current_Password </span>
+        <input id="current_password" name="current_password" type="password" class="form-control" ng-model="user.current_password" style="width:100%" required/>
       </div>
     </fieldset>
     <fieldset>
-      <legend style="margin-bottom:0px;">Password to Change</legend>
+      <legend style="margin-bottom:0px;"> New Password </legend>
       <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, :autocomplete => 'off', class: 'form-control' %>
+        <span style="font-weight:bold;"> Password </span>
+        <input id="new_password" name="new_password" type="password" class="form-control" ng-model="user.password" style="width:100%" required/>
       </div>
       <div class="form-group">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <span style="font-weight:bold;"> Password_Confirmation </span>
+        <input id="new_password_confirmation" name="new_password_confirmation" type="password" class="form-control" ng-model="user.password_confirmation" style="width:100%" required/>
       </div>
     </fieldset>
-    <%= f.submit 'Update', :class => 'button right' %>
-  <% end %>
+    <button class="col-md-3 btn btn-default" ng-click="submitUpdate()">Save</button>
+    <button type="button" class="col-md-8 col-md-offset-1 btn btn-default" onclick="location.href='/'">Back</button>
+  </form>
 </div>

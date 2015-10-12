@@ -1,7 +1,70 @@
 <h3>Welcome</h3>
 
-<% if current_user %>
-	<div class="row" ng-controller="TestCtrl">
+<div ng-controller="TestCtrl">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3" ng-show="message" id="errdiv">
+			<p style="color:red; font-size:20px; text-align:center;"></p>
+		</div>
+	</div>
+
+	<!-- Dash_Board -->
+	<div class="row" ng-show="currentUser==false && signup == '0'">
+		<form id="loginform" class="col-md-6 col-md-offset-3">
+			<div class="authform">
+				<div class="form-group">
+		      <span style="font-weight:bold;">* User_Email</span>
+		    	<input id="log_email" name="log_email" class="form-control" type="email" ng-model="credentials_login.email" style="width:100%" required/>
+		    </div>
+		    <div class="form-group">
+		      <span style="font-weight:bold;">* Password</span>
+		      <input id="log_pass" name="log_pass" class="form-control" type="password" ng-model="credentials_login.password" style="width:100%" required/>
+		    </div>
+				<div class="row">
+					<button class="col-md-3 col-md-offset-5 btn btn-default" ng-click="submitLogin()" style="">Login</button>
+					<button class="col-md-3 btn btn-default" type="button" ng-click="sign_up()">Sign Up</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<!-- Signup_Board -->
+	<div class="row" ng-show="currentUser==false && signup=='1'">
+		<form id="signform" class="col-md-6 col-md-offset-3">
+			<div class="authform">
+				<div class="row">
+		      <div class="form-group col-md-5">
+		        <span style="font-weight:bold;">* First Name</span>
+		        <input id="first_name" class="form-control" name="first_name" type="text" ng-model="credentials_signup.first_name" style="width:100%"/>
+		      </div>
+		      <div class="form-group col-md-7">
+		        <span style="font-weight:bold;">* Last Name</span>
+		        <input id="last_name" class="form-control" name="last_name" type="text" ng-model="credentials_signup.last_name" style="width:100%"/>
+		      </div>
+		    </div>
+		    <div class="form-group">
+		      <span style="font-weight:bold;">* Email</span>
+		    	<input id="sign_email" class="form-control" name="sign_email" type="email" ng-model="credentials_signup.email" style="width:100%"/>
+		    </div>
+		    <div class="form-group">
+		      <span style="font-weight:bold;">* Phone Number</span>
+		      <input id="phone_number" class="form-control" name="phone_number" type="text" ng-model="credentials_signup.phone_number" style="width:100%"/>
+		    </div>
+		    <div class="form-group">
+		      <span style="font-weight:bold;">* Password</span>
+		      <input id="sign_password" class="form-control" name="sign_password" type="password" ng-model="credentials_signup.password" style="width:100%"/>
+		    </div>
+		    <div class="form-group">
+		      <span style="font-weight:bold;">* Password Confirmation</span>
+		      <input id="sign_password_confirmation" class="form-control" name="sign_password_confirmation" type="password" ng-model="credentials_signup.password_confirmation" style="width:100%"/>
+		    </div>
+		    <button class="col-md-3 col-md-offset-5 btn btn-default" ng-click="submitSignup()">OK</button>
+				<button class="col-md-3 btn btn-default" type="button" ng-click="submitBack()" style="margin-left:10px;">Back</button>
+			</div>
+		</form>	
+	</div>
+
+	<!-- Loginfo_Board -->
+	<div class="row" ng-show="currentUser!=false">
 		<div class="col-md-6 col-md-offset-3">
 			<table class="table">
 				<tr>
@@ -11,12 +74,16 @@
 					<th>Phone Number</th>
 				</tr>
 				<tr>
-					<td>{{ posts.first_name }}</td>
-					<td>{{ posts.last_name }}</td>
-					<td>{{ posts.email }}</td>
-					<td>{{ posts.phone_number }}</td>
+					<td>{{ currentUser.first_name }}</td>
+					<td>{{ currentUser.last_name }}</td>
+					<td>{{ currentUser.email }}</td>
+					<td>{{ currentUser.phone_number }}</td>
 				</tr>
 			</table>
+			<div class="row">
+				<button class="col-md-2 col-md-offset-6 btn btn-default" onclick="location.href='/users/edit'">Edit</button>
+				<button class="col-md-3 btn btn-default" ng-click="submitLogout()">Log-out</button>
+			</div>
 		</div>
 	</div>
-<% end %>
+</div>
