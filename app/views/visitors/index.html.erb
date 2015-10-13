@@ -1,27 +1,36 @@
-<h3>Welcome</h3>
-
 <div ng-controller="TestCtrl">
 	<div class="row">
-		<div class="col-md-6 col-md-offset-3" ng-show="message" id="errdiv">
-			<p style="color:red; font-size:20px; text-align:center;"></p>
+		<div class="col-md-6 col-md-offset-3" id="titlediv">
+			<h3>Welcome</h3>
 		</div>
+		<div class="col-md-6 col-md-offset-3 alert" ng-show="message" id="infodiv">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-show="message">×</button>
+      <div id="flash_notice"></div>
+    </div>
 	</div>
 
 	<!-- Dash_Board -->
 	<div class="row" ng-show="currentUser==false && signup == '0'">
-		<form id="loginform" class="col-md-6 col-md-offset-3">
+		<form id="loginform" name="loginform" novalidate class="col-md-6 col-md-offset-3">
 			<div class="authform">
 				<div class="form-group">
 		      <span style="font-weight:bold;">* User_Email</span>
-		    	<input id="log_email" name="log_email" class="form-control" type="email" ng-model="credentials_login.email" style="width:100%" required/>
+		    	<input id="log_email" name="log_email" class="form-control" type="email" ng-model="credentials_login.email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" style="width:100%" required/>
+		    	<div ng-show="loginform.$submitted || loginform.log_email.$touched">
+      			<div ng-show="loginform.log_email.$error.required" style="color:red;">Enter your email.</div>
+      			<div ng-show="loginform.log_email.$error.pattern" style="color:red;">Valid email type is abc@abc.com</div>
+    			</div>
 		    </div>
 		    <div class="form-group">
 		      <span style="font-weight:bold;">* Password</span>
-		      <input id="log_pass" name="log_pass" class="form-control" type="password" ng-model="credentials_login.password" style="width:100%" required/>
+		      <input id="log_password" name="log_password" class="form-control" type="password" ng-model="credentials_login.password" style="width:100%" required/>
+		      <div ng-show="loginform.$submitted || loginform.log_password.$touched">
+      			<div ng-show="loginform.log_password.$error.required" style="color:red;">Please enter your password.</div>
+    			</div>
 		    </div>
 				<div class="row">
-					<button class="col-md-3 col-md-offset-5 btn btn-default" ng-click="submitLogin()" style="">Login</button>
-					<button class="col-md-3 btn btn-default" type="button" ng-click="sign_up()">Sign Up</button>
+					<button class="col-md-3 col-md-offset-4 btn btn-success" ng-click="submitLogin()" style="">Login</button>
+					<button class="col-md-3 col-md-offset-1 btn btn-info" type="button" ng-click="sign_up()">Sign Up</button>
 				</div>
 			</div>
 		</form>
@@ -29,36 +38,53 @@
 
 	<!-- Signup_Board -->
 	<div class="row" ng-show="currentUser==false && signup=='1'">
-		<form id="signform" class="col-md-6 col-md-offset-3">
+		<form id="signform" name="signform" novalidate class="col-md-6 col-md-offset-3">
 			<div class="authform">
 				<div class="row">
-		      <div class="form-group col-md-5">
+		      <div class="form-group col-md-6">
 		        <span style="font-weight:bold;">* First Name</span>
-		        <input id="first_name" class="form-control" name="first_name" type="text" ng-model="credentials_signup.first_name" style="width:100%"/>
+		        <input id="first_name" class="form-control" name="first_name" type="text" ng-model="credentials_signup.first_name" style="width:100%" required/>
+		        <div ng-show="signform.$submitted || signform.first_name.$touched">
+      				<div ng-show="signform.first_name.$error.required" style="color:red;">Enter your first name.</div>
+    				</div>
 		      </div>
-		      <div class="form-group col-md-7">
+		      <div class="form-group col-md-6">
 		        <span style="font-weight:bold;">* Last Name</span>
-		        <input id="last_name" class="form-control" name="last_name" type="text" ng-model="credentials_signup.last_name" style="width:100%"/>
+		        <input id="last_name" class="form-control" name="last_name" type="text" ng-model="credentials_signup.last_name" style="width:100%" required/>
+		        <div ng-show="signform.$submitted || signform.last_name.$touched">
+      				<div ng-show="signform.last_name.$error.required" style="color:red;">Enter your last name.</div>
+    				</div>
 		      </div>
 		    </div>
 		    <div class="form-group">
 		      <span style="font-weight:bold;">* Email</span>
-		    	<input id="sign_email" class="form-control" name="sign_email" type="email" ng-model="credentials_signup.email" style="width:100%"/>
+		    	<input id="sign_email" class="form-control" name="sign_email" type="email" ng-model="credentials_signup.email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" style="width:100%" required/>
+		    	<div ng-show="signform.$submitted || signform.sign_email.$touched">
+      			<div ng-show="signform.sign_email.$error.required" style="color:red;">Enter your email.</div>
+      			<div ng-show="signform.sign_email.$error.pattern" style="color:red;">Valid email type is abc@abc.com</div>
+    			</div>
 		    </div>
 		    <div class="form-group">
-		      <span style="font-weight:bold;">* Phone Number</span>
+		      <span style="font-weight:bold;"> Phone Number</span>
 		      <input id="phone_number" class="form-control" name="phone_number" type="text" ng-model="credentials_signup.phone_number" style="width:100%"/>
 		    </div>
 		    <div class="form-group">
 		      <span style="font-weight:bold;">* Password</span>
-		      <input id="sign_password" class="form-control" name="sign_password" type="password" ng-model="credentials_signup.password" style="width:100%"/>
+		      <input id="sign_password" class="form-control" name="sign_password" type="password" ng-model="credentials_signup.password" style="width:100%" required/>
+		      <div ng-show="signform.$submitted || signform.sign_password.$touched">
+      			<div ng-show="signform.sign_password.$error.required" style="color:red;">Enter your password.</div>
+    			</div>
 		    </div>
 		    <div class="form-group">
 		      <span style="font-weight:bold;">* Password Confirmation</span>
-		      <input id="sign_password_confirmation" class="form-control" name="sign_password_confirmation" type="password" ng-model="credentials_signup.password_confirmation" style="width:100%"/>
+		      <input id="sign_password_confirmation" class="form-control" name="sign_password_confirmation" type="password" ng-model="credentials_signup.password_confirmation" ng-pattern="(credentials_signup.password)" style="width:100%" required/>
+		      <div ng-show="signform.$submitted || signform.sign_password_confirmation.$touched">
+		      	<div ng-show="signform.sign_password_confirmation.$error.required" style="color:red;">Repeat your password.</div>
+		      	<div ng-show="!signform.sign_password_confirmation.$error.required && signform.sign_password_confirmation.$error.pattern" style="color:red;">Passwords don't match!</div>
+		      </div>
 		    </div>
-		    <button class="col-md-3 col-md-offset-5 btn btn-default" ng-click="submitSignup()">OK</button>
-				<button class="col-md-3 btn btn-default" type="button" ng-click="submitBack()" style="margin-left:10px;">Back</button>
+		    <button class="col-md-4 col-md-offset-4 btn btn-success" ng-click="submitSignup()">Sign up</button>
+				<button class="col-md-3 col-md-offset-1 btn btn-primary" type="button" ng-click="submitBack()" style="margin-left:10px;">Back</button>
 			</div>
 		</form>	
 	</div>
@@ -81,8 +107,8 @@
 				</tr>
 			</table>
 			<div class="row">
-				<button class="col-md-2 col-md-offset-6 btn btn-default" onclick="location.href='/users/edit'">Edit</button>
-				<button class="col-md-3 btn btn-default" ng-click="submitLogout()">Log-out</button>
+				<button class="col-md-3 col-md-offset-5 btn btn-success" onclick="location.href='/users/edit'">Edit</button>
+				<button class="col-md-2 col-md-offset-1 btn btn-primary" ng-click="submitLogout()">Log-out</button>
 			</div>
 		</div>
 	</div>
