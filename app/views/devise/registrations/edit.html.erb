@@ -1,49 +1,67 @@
-<div class="authform" ng-controller="ProfileCtrl">
-  <h3>Edit <%= resource_name.to_s.humanize %></h3>
-  <div class="row">
-    <div class="col-md-12" ng-show="errormessage" id="editerr">
-      <p style="color:red; font-size:20px; text-align:center;"></p>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-6 col-md-offset-3" ng-controller="ProfileCtrl" >
+      <h3>Edit <%= resource_name.to_s.humanize %></h3>
+      <div class="row">
+        <div class="alert" ng-show="message" id="infodiv">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-show="message">×</button>
+          <div id="flash_notice"></div>
+        </div>
+      </div>
+      <form id="editform" name="editform" novalidate>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <span style="font-weight:bold;">* First Name </span>
+            <input id="first_name" name="first_name" type="text" class="form-control" ng-model="user.first_name" style="width:100%" required/>
+            <div ng-show="editform.$submitted || editform.first_name.$touched">
+              <div ng-show="editform.first_name.$error.required" style="color:red;">Enter your first name.</div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <span style="font-weight:bold;">* Last Name </span>
+            <input id="last_name" name="last_name" type="text" class="form-control" ng-model="user.last_name" style="width:100%" required/>
+            <div ng-show="editform.$submitted || editform.last_name.$touched">
+              <div ng-show="editform.last_name.$error.required" style="color:red;">Enter your last name.</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <span style="font-weight:bold;">* Email </span>
+          <input id="email" name="email" type="email" class="form-control" ng-model="user.email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" style="width:100%" required/>
+          <div ng-show="editform.$submitted || editform.email.$touched">
+            <div ng-show="editform.email.$error.required" style="color:red;">Enter your email.</div>
+            <div ng-show="editform.email.$error.pattern" style="color:red;">Valid email type is abc@abc.com</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <span style="font-weight:bold;"> Phone number </span>
+          <input id="phone_number" type="text" class="form-control" ng-model="user.phone_number" style="width:100%" />
+        </div>
+        <div class="form-group">
+          <span style="font-weight:bold;"> Current Password </span>
+          <input id="current_password" name="current_password" type="password" class="form-control" ng-model="user.current_password" style="width:100%" required/>
+          <div ng-show="editform.$submitted || editform.current_password.$touched">
+            <div ng-show="editform.current_password.$error.required" style="color:red;">Enter your current password.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <span style="font-weight:bold;"> New Password </span>
+          <input id="new_password" name="new_password" type="password" class="form-control" ng-model="user.password" style="width:100%" required/>
+          <div ng-show="editform.$submitted || editform.new_password.$touched">
+            <div ng-show="editform.new_password.$error.required" style="color:red;">Enter your new password.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <span style="font-weight:bold;"> Password Confirmation </span>
+          <input id="new_password_confirmation" name="new_password_confirmation" type="password" class="form-control" ng-model="user.password_confirmation" ng-pattern="(user.password)" style="width:100%" required/>
+          <div ng-show="editform.$submitted || editform.new_password_confirmation.$touched">
+            <div ng-show="editform.new_password_confirmation.$error.required" style="color:red;">Repeat your password.</div>
+            <div ng-show="!editform.new_password_confirmation.$error.required && editform.new_password_confirmation.$error.pattern" style="color:red;">Passwords don't match!</div>
+          </div>
+        </div>
+        <button class="col-md-8 btn btn-success" ng-click="submitUpdate()">Save</button>
+        <button type="button" class="col-md-3 col-md-offset-1 btn btn-primary" onclick="location.href='/'">Back</button>
+      </form>
     </div>
   </div>
-  <form id="profile-form">
-    <div class="row">
-      <div class="form-group col-md-5">
-        <span style="font-weight:bold;">* First Name </span>
-        <input id="first_name" name="first_name" type="text" class="form-control" ng-model="user.first_name" style="width:100%" required/>
-      </div>
-      <div class="form-group col-md-7">
-        <span style="font-weight:bold;">* Last Name </span>
-        <input id="last_name" name="last_name" type="text" class="form-control" ng-model="user.last_name" style="width:100%" required/>
-      </div>
-    </div>
-    <div class="form-group">
-      <span style="font-weight:bold;">* Email </span>
-      <input id="email" name="email" type="email" class="form-control" ng-model="user.email" style="width:100%" required/>
-    </div>
-    <div class="form-group">
-      <span style="font-weight:bold;"> Phone number </span>
-      <input id="phone_number" type="text" class="form-control" ng-model="user.phone_number" style="width:100%" />
-    </div>
-    <fieldset>
-      <legend style="margin-bottom:0px;">Current Password</legend>
-      <p>You must enter your current password to make changes.</p>
-      <div class="form-group">
-        <span style="font-weight:bold;"> Current_Password </span>
-        <input id="current_password" name="current_password" type="password" class="form-control" ng-model="user.current_password" style="width:100%" required/>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend style="margin-bottom:0px;"> New Password </legend>
-      <div class="form-group">
-        <span style="font-weight:bold;"> Password </span>
-        <input id="new_password" name="new_password" type="password" class="form-control" ng-model="user.password" style="width:100%" required/>
-      </div>
-      <div class="form-group">
-        <span style="font-weight:bold;"> Password_Confirmation </span>
-        <input id="new_password_confirmation" name="new_password_confirmation" type="password" class="form-control" ng-model="user.password_confirmation" style="width:100%" required/>
-      </div>
-    </fieldset>
-    <button class="col-md-3 btn btn-default" ng-click="submitUpdate()">Save</button>
-    <button type="button" class="col-md-8 col-md-offset-1 btn btn-default" onclick="location.href='/'">Back</button>
-  </form>
 </div>
